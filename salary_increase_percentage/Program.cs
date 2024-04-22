@@ -5,15 +5,23 @@ do
 {
     Console.Clear();
     Console.WriteLine("ESTE PROGRAMA IRÁ MOSTRAR A PORCENTAGEM DE AUMENTO DO SALARIO INFORMADO");
-    Console.Write("Qual o antigo salário? \nR$");
-    salary = int.Parse(Console.ReadLine());
+    do
+    {
+        Console.Write("Qual o antigo salário?\nR$");
+        salary = int.Parse(Console.ReadLine());
+
+        if (salary <= 0)
+        {
+            Console.WriteLine("Salário não pode ser menor ou igual a 0.");
+        }
+    } while (salary <= 0);
 
     do
     {
         Console.WriteLine();
         Console.Write("Qual o salário atual com aumento? \nR$");
         increase = int.Parse(Console.ReadLine());
-        
+
         if (increase < salary)
         {
             Console.WriteLine("O salário com o aumento, precisa ser maior que o antigo salário.");
